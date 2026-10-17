@@ -53,11 +53,6 @@ img { max-width: 100%; display: block; }
   align-items: center;
   gap: 10px;
 }
-.logo__img {
-  height: 28px;
-  width: auto;
-  filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(102,192,244,0.5));
-}
 .logo__text {
   font-weight: 900;
   font-size: 20px;
@@ -307,25 +302,6 @@ img { max-width: 100%; display: block; }
 .game:hover .game__cover img { transform: scale(1.08); }
 
 .game__body { padding: 24px 26px 28px; }
-.game__logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 48px;
-  margin-bottom: 16px;
-}
-.game__logo img {
-  max-height: 100%;
-  max-width: 100%;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(102,192,244,0.15));
-  transition: filter 0.3s ease, transform 0.3s ease;
-}
-.game:hover .game__logo img {
-  filter: drop-shadow(0 4px 16px rgba(102,192,244,0.45));
-  transform: scale(1.06);
-}
 .game__body h3 { font-size: 20px; margin-bottom: 4px; }
 .game__year {
   color: var(--orange);
@@ -365,6 +341,35 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 4px 14px rgba(102,192,244,0.4);
 }
 
+/* ===== ЗАГЛУШКА ДЛЯ ОБЛОЖКИ (CS2, CS:GO) ===== */
+.game__cover--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1f2b 0%, #0b0f14 50%, #1b6f8c 100%);
+  position: relative;
+  overflow: hidden;
+}
+.game__cover--placeholder span {
+  font-size: clamp(40px, 8vw, 72px);
+  font-weight: 900;
+  letter-spacing: 6px;
+  color: transparent;
+  background: linear-gradient(135deg, #66c0f4, #ff6b35);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 40px rgba(102,192,244,0.4);
+  position: relative;
+  z-index: 1;
+}
+.game__cover--placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(102,192,244,0.15), transparent 70%);
+}
+
 /* ===== STEAM ===== */
 .steam {
   display: grid;
@@ -372,16 +377,6 @@ img { max-width: 100%; display: block; }
   gap: 60px;
   align-items: center;
   margin-top: 40px;
-}
-.steam__brand {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 24px;
-}
-.steam__brand-logo {
-  height: 56px;
-  width: auto;
-  filter: drop-shadow(0 4px 20px rgba(102,192,244,0.35));
 }
 .steam__text p { margin-bottom: 24px; font-size: 16px; }
 .steam__text strong { color: var(--accent); }
@@ -417,12 +412,6 @@ img { max-width: 100%; display: block; }
   margin-top: 70px;
   padding-top: 50px;
   border-top: 1px solid var(--border);
-}
-.steam__extra-logo { display: flex; margin-bottom: 16px; }
-.steam__extra-logo img {
-  height: 40px;
-  width: auto;
-  filter: drop-shadow(0 2px 10px rgba(102,192,244,0.3));
 }
 .steam__extra-text h3 { font-size: 24px; margin-bottom: 12px; color: var(--accent); }
 .steam__extra-text p { color: var(--muted); }
@@ -508,9 +497,4 @@ img { max-width: 100%; display: block; }
   .section { padding: 70px 0; }
   .timeline { padding-left: 20px; }
   .timeline__item { padding-left: 32px; }
-  .game__logo { height: 40px; }
-  .steam__brand-logo { height: 44px; }
-  .steam__extra-logo img { height: 32px; }
-  .game__cover--placeholder {
-  ...
 }

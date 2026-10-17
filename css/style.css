@@ -511,5 +511,6 @@ img { max-width: 100%; display: block; }
   .game__logo { height: 40px; }
   .steam__brand-logo { height: 44px; }
   .steam__extra-logo img { height: 32px; }
+  .game__cover--placeholder {
+  ...
 }
-.game__cover--placeholder

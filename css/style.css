@@ -223,7 +223,7 @@ img { max-width: 100%; display: block; }
 .card h3 { font-size: 20px; margin-bottom: 12px; color: var(--accent); }
 .card p { color: var(--muted); font-size: 15px; }
 
-/* ===== О КОМПАНИИ (сетка) ===== */
+/* ===== О КОМПАНИИ ===== */
 .about-layout {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
@@ -334,6 +334,36 @@ img { max-width: 100%; display: block; }
   margin-bottom: 12px;
 }
 .game__body p:last-child { color: var(--muted); font-size: 14px; }
+
+/* ===== ВЫДЕЛЕННЫЕ КАРТОЧКИ (Dota 2, CS2) ===== */
+.game--featured {
+  position: relative;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(102,192,244,0.2), 0 20px 60px rgba(102,192,244,0.15);
+}
+.game--featured:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 25px 70px rgba(102,192,244,0.3);
+}
+.game--featured .game__cover {
+  aspect-ratio: 16 / 10;
+}
+.game--featured .game__body h3 {
+  font-size: 24px;
+}
+.game__badge {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 5px 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: #0b0f14;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  box-shadow: 0 4px 14px rgba(102,192,244,0.4);
+}
 
 /* ===== STEAM ===== */
 .steam {
@@ -453,6 +483,7 @@ img { max-width: 100%; display: block; }
   .about-layout { grid-template-columns: 1fr; gap: 30px; }
   .steam__extra { grid-template-columns: 1fr; gap: 30px; }
 }
+
 @media (max-width: 720px) {
   .header__inner { height: 60px; }
   .nav {
